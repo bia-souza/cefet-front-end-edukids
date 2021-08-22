@@ -23,18 +23,83 @@
  *   - com-raiva: animal fica pulsando
  *   - atacando: animal dá um salto e cresce, com uma borda vermelha
  */
-.com-fome {
+ 
+@keyframes blink {
+    0% {
+        opacity: 0.8;
+    }
+    20% {
+        opacity: 0.2;
+    }
+	40% {
+        opacity: 0.8;
+    }
+	60% {
+        opacity: 0.2;
+    }
+    80% {
+        opacity: 0.8;
+    }
+	100% {
+        opacity: 0.2;
+    }
+}
 
+@keyframes attention {
+    0% {
+        border: 10px solid red;
+		opacity: 1;
+    }
+    30% {
+        border: 10px solid #c40233;
+		opacity: 0;
+    }
+    60% {
+        border: 10px solid red;
+		opacity: 1;
+    }
+	90% {
+        border: 10px solid #c40233;
+		opacity: 0;
+    }
+}
+
+@keyframes shake {
+  0% { transform: translate(8px, 8px) rotate(0deg); }
+  10% { transform: translate(-8px, -9px) rotate(-10deg); }
+  20% { transform: translate(-16px, 0px) rotate(10deg); }
+  30% { transform: translate(16px, 9px) rotate(0deg); }
+  40% { transform: translate(16px, -8px) rotate(10deg); }
+  50% { transform: translate(-8px, 9px) rotate(-10deg); }
+  60% { transform: translate(-16px, 8px) rotate(0deg); }
+  70% { transform: translate(16px, 8px) rotate(-10deg); }
+  80% { transform: translate(-8px, -8px) rotate(10deg); }
+  90% { transform: translate(8px, 8px) rotate(0deg); }
+  100% { transform: translate(16px, -9px) rotate(-10deg); }
+}
+
+@keyframes dancing {
+  10% { transform: rotate(-90deg); }
+  40% { transform: rotate(90deg); }
+  41% { transform: rotate(90deg); }
+  90% { transform: rotate(-90deg); }
+}
+	
+.com-fome {
+	border: 20px solid yellow;
+	animation: blink 4s;
 }
 
 .satisfeito {
-
+	border: 20px solid limegreen;
+	animation: dancing 3s;
 }
 
 .com-raiva {
-
+	animation: attention 2s;
 }
 
 .atacando {
-
+	border: 20px solid red;
+	animation: shake 1s;
 }
